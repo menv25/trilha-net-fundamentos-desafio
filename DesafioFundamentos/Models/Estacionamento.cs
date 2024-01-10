@@ -14,27 +14,37 @@ namespace DesafioFundamentos.Models
 
         public void AdicionarVeiculo()
         {
-            // TODO: Pedir para o usuário digitar uma placa (ReadLine) e adicionar na lista "veiculos"
-            // *IMPLEMENTE AQUI*
+            // TODO: Pedir para o usuário digitar uma placa (ReadLine) e adicionar na lista "veiculos" OK
+          
             Console.WriteLine("Digite a placa do veículo para estacionar:");
+            string placa = Console.ReadLine();
         }
 
         public void RemoverVeiculo()
         {
             Console.WriteLine("Digite a placa do veículo para remover:");
 
-            // Pedir para o usuário digitar a placa e armazenar na variável placa
-            // *IMPLEMENTE AQUI*
-            string placa = "";
+            // Pedir para o usuário digitar a placa e armazenar na variável placa OK
+            Console.WriteLine("Digite a placa do veículo:");
+            string placa = Console.ReadLine();
 
             // Verifica se o veículo existe
             if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
             {
+                   double precoInicial = 5.0;
+                   double precoPorHora = 2.0;
                 Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
 
                 // TODO: Pedir para o usuário digitar a quantidade de horas que o veículo permaneceu estacionado,
                 // TODO: Realizar o seguinte cálculo: "precoInicial + precoPorHora * horas" para a variável valorTotal                
-                // *IMPLEMENTE AQUI*
+                  if (double.TryParse(Console.ReadLine(), out double horas))
+        {
+            // Calcule o valor total
+            double valorTotal = precoInicial + precoPorHora * horas;
+
+            // Exiba o valor total
+            Console.WriteLine($"Valor total a ser pago: R${valorTotal:F2}");
+        }
                 int horas = 0;
                 decimal valorTotal = 0; 
 
